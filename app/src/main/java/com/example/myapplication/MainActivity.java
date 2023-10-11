@@ -1,21 +1,23 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class MainActivity extends AppCompatActivity {
     Button denglu;
     Button zhuce;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //按键属性的ID
         denglu = this.findViewById(R.id.denglu);
         zhuce = this.findViewById(R.id.zhuce);
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         zhuce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //实现界面跳转，从登录界面跳转到注册界面
+                //实现界面跳转，跳转到注册界面
                 Intent intent = null;  //这个变量初始申明为空
                 intent = new Intent(MainActivity.this, RegisterActivity.class);//跳转界面
                 startActivity(intent);
